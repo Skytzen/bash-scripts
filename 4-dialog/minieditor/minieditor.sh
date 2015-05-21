@@ -31,4 +31,13 @@ case $ESCOLHA in
 
 	;;	
 
+	Abre) ARQUIVO=$(dialog --stdout \
+	--inputbox "Digite o caminho completo do arquivo a ser aberto:" 0 0)
+
+	TEXTO=$(dialog --stdout \
+	--title "$TITULO" --backtitle "$SUBTITULO" \
+	--editbox $ARQUIVO 0 0);
+
+	echo "$TEXTO" > $ARQUIVO;
+
 esac
